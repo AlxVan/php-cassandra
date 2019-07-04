@@ -29,4 +29,3 @@ cd $builddir/php-driver/ext
 LIBS="-lssl -lz -luv -lm -lstdc++" LDFLAGS="-L$builddir/out/lib" \
    ./configure --with-cassandra=$builddir/out --with-libdir=lib
 make
-
