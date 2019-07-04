@@ -12,7 +12,7 @@ mkdir -p $builddir/out/include
 echo "Compiling cpp-driver..."
 cd $builddir/cpp-driver
 cmake -DCMAKE_CXX_FLAGS="-fPIC" -DCMAKE_INSTALL_PREFIX:PATH=$builddir -DCASS_BUILD_STATIC=ON \
-  -DCASS_BUILD_SHARED=OFF -DCMAKE_BUILD_TYPE=RELEASE -DCASS_USE_ZLIB=ON \
+  -DCASS_BUILD_SHARED=ON -DCMAKE_BUILD_TYPE=RELEASE -DCASS_USE_ZLIB=ON \
   -DCMAKE_INSTALL_LIBDIR:PATH=lib $basedir/php-driver/lib/cpp-driver/
 make
 
