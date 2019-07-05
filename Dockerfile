@@ -8,4 +8,4 @@ RUN apt-get install -y git debhelper php-pear cmake libuv1 libuv1-dev libgmp-dev
 RUN git clone https://github.com/AlxVan/php-cassandra.git
 RUN cd php-cassandra
 RUN git submodule update --init --recursive
-RUN dpkg-buildpackage
+# RUN dpkg-buildpackage
