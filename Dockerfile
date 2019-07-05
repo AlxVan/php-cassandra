@@ -1,5 +1,6 @@
 # docker build . -t php-cassandra:1.3.2
-# docker run -it -v "/media/alexis/Data/git/php-cassandra/build/:/php-cassandra/toHost" php-cassandra:1.3.2 bash
+# docker run -it -v "/tmp/build/:/php-cassandra/host/" php-cassandra:1.3.2 bash 
+# > dpkg-buildpackage
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,5 +11,4 @@ RUN apt-get install -y git debhelper php-pear cmake libuv1 libuv1-dev libgmp-dev
 RUN git clone https://github.com/AlxVan/php-cassandra.git
 WORKDIR php-cassandra/
 RUN git submodule update --init --recursive
-RUN mkdir /php-cassandra/toHost
 # RUN dpkg-buildpackage
