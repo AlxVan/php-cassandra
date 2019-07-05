@@ -1,2 +1,2 @@
 files/* /
-build/php-driver/ext/modules/cassandra.so /usr/lib/php/20151012
+build/php-driver/ext/modules/cassandra.so /usr/lib/php/20170718

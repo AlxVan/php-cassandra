@@ -16,6 +16,11 @@ cmake -DCMAKE_CXX_FLAGS="-fPIC" -DCMAKE_INSTALL_PREFIX:PATH=$builddir -DCASS_BUI
   -DCMAKE_INSTALL_LIBDIR:PATH=lib $basedir/php-driver/lib/cpp-driver/
 make
 
+mkdir -p "$builddir/../files/usr/lib/"
+cp -a $builddir/cpp-driver/libcassandra_static.a $builddir/../files/usr/lib/
+cp -a $builddir/cpp-driver/libcassandra.so* $builddir/../files/usr/lib/
+cp $basedir/php-driver/lib/cpp-driver/include/cassandra.h $builddir/../files/usr/lib/
+
 echo "PHP-izing extension ..."
 cp -a $basedir/php-driver $builddir/php-driver
 cd $builddir/php-driver/ext
@@ -29,3 +34,4 @@ cd $builddir/php-driver/ext
 LIBS="-lssl -lz -luv -lm -lstdc++" LDFLAGS="-L$builddir/out/lib" \
    ./configure --with-cassandra=$builddir/out --with-libdir=lib
 make
+
